@@ -16,16 +16,18 @@ public class Checker implements Runnable {
 	public void run() {
 		Player[] players = plugin.getServer().getOnlinePlayers();
 
-		for (Player player : players) {
-			if (!player.getWorld().hasStorm()) continue;
-			if (player.hasPermission("acidrain.immune")) continue;
+		for(Player player : players) {
+			if(!player.getWorld().hasStorm()) continue;
+			if(player.hasPermission("acidrain.immune")) continue;
 
 			int xLocation = player.getLocation().getBlockX();
 			int zLocation = player.getLocation().getBlockX();
 
 			Biome biomeLocation = player.getWorld().getBiome(xLocation, zLocation);
 
-			switch (biomeLocation) {
+			plugin.verbose("Player: " + player.getName() + " X: " + xLocation + " Z: " + zLocation + " Biome: " + biomeLocation.toString());
+
+			switch(biomeLocation) {
 				case DESERT:
 				case DESERT_HILLS:
 				case FROZEN_OCEAN:
@@ -43,8 +45,8 @@ public class Checker implements Runnable {
 
 			int highestY = player.getWorld().getHighestBlockYAt(xLocation, zLocation);
 
-			if (yLocation <= highestY) continue;
-			if (player.getHealth() <= Config.damageCutoffLevel) continue;
+			if(yLocation <= highestY) continue;
+			if(player.getHealth() <= Config.damageCutoffLevel) continue;
 
 			plugin.verbose("Player: " + player.getName() + " Y: " + yLocation + " HighestY: " + highestY);
 
