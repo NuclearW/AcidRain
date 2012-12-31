@@ -19,6 +19,7 @@ public class Checker implements Runnable {
 		for (Player player : players) {
 			if (!player.getWorld().hasStorm()) continue;
 			if (player.hasPermission("acidrain.immune")) continue;
+
 			int xLocation = player.getLocation().getBlockX();
 			int zLocation = player.getLocation().getBlockX();
 
@@ -44,6 +45,7 @@ public class Checker implements Runnable {
 
 			if (yLocation <= highestY) continue;
 			if (player.getHealth() <= Config.damageCutoffLevel) continue;
+
 			player.damage(Config.damagePerInterval);
 		}
 	}
