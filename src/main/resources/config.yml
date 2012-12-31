@@ -1,4 +1,10 @@
 # AcidRain config file
+
+# Time between in seconds
 check-interval: 10
+
+# Damage per interval
 damage-per: 1
+
+# How many half-hearts to stop damage at.
 damage-cutoff: 0
