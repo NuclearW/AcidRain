@@ -12,5 +12,11 @@ damage-cutoff: 0
 # Leather armor will act like a raincoat
 leather-raincoat: true
 
+# Rain can be poisonous
+poisonrain: false
+
+# Chance to poison a player
+poisonchance: 10
+
 # Output Verbose messages?
 verbose: false

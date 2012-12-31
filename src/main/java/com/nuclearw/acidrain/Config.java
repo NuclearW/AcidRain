@@ -6,8 +6,11 @@ public class Config {
 	public static int checkInterval;
 	public static int damagePerInterval;
 	public static int damageCutoffLevel;
-
+	public static int poisonchance;
+	
 	public static boolean leatherRaincoat;
+	public static boolean poisonrain;
+	
 	public static boolean verbose;
 
 	public static void load(AcidRain plugin) {
@@ -20,6 +23,8 @@ public class Config {
 		damageCutoffLevel = plugin.getConfig().getInt("damage-cutoff");
 		
 		leatherRaincoat = plugin.getConfig().getBoolean("leather-raincoat");
+		poisonrain = plugin.getConfig().getBoolean("poisonrain");
+		
 		verbose = plugin.getConfig().getBoolean("verbose");
 	}
 }
