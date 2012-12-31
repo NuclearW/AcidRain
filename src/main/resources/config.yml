@@ -9,5 +9,8 @@ damage-per: 1
 # How many half-hearts to stop damage at.
 damage-cutoff: 0
 
+# Leather armor will act like a raincoat
+leather-raincoat: true
+
 # Output Verbose messages?
 verbose: false

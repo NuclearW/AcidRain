@@ -2,8 +2,11 @@ package com.nuclearw.acidrain.runnables;
 
 import com.nuclearw.acidrain.AcidRain;
 import com.nuclearw.acidrain.Config;
+
+import org.bukkit.Material;
 import org.bukkit.block.Biome;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.PlayerInventory;
 
 public class Checker implements Runnable {
 	private AcidRain plugin;
@@ -48,9 +51,18 @@ public class Checker implements Runnable {
 			if(yLocation <= highestY) continue;
 			if(player.getHealth() <= Config.damageCutoffLevel) continue;
 
+			PlayerInventory inventory = player.getInventory();
+			if(Config.leatherRaincoat &&
+					inventory.getHelmet().getType() == Material.LEATHER_HELMET &&
+					inventory.getChestplate().getType() == Material.LEATHER_CHESTPLATE &&
+					inventory.getLeggings().getType() == Material.LEATHER_LEGGINGS &&
+					inventory.getBoots().getType() == Material.LEATHER_BOOTS) {
+				continue;
+			}
+
 			plugin.verbose("Player: " + player.getName() + " Y: " + yLocation + " HighestY: " + highestY);
 
-			player.damage(Config.damagePerInterval, player);
+			player.damage(Config.damagePerInterval);
 		}
 	}
 }
