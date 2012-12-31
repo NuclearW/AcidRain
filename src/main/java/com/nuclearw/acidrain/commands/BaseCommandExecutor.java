@@ -21,6 +21,7 @@ public class BaseCommandExecutor implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(args.length > 0) {
+			// todo: add help subcommand
 			if(args[0].equalsIgnoreCase("reload")) {
 				if(!sender.hasPermission("acidrain.reload")) {
 					if(sender instanceof Player) {
@@ -44,7 +45,13 @@ public class BaseCommandExecutor implements CommandExecutor {
 				return true;
 			}
 			
-			return false;
+			if(sender instanceof Player) {
+				sender.sendMessage(ChatColor.RED + "Unknown Sub-Command");
+				return true;
+			}
+			
+			plugin.getLogger().info("Unknown Sub-Command");
+			return true;
 		}
 		return false;
 	}
