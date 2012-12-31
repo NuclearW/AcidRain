@@ -41,7 +41,7 @@ public class Checker implements Runnable {
 					continue;
 			}
 
-			double yLocation = player.getLocation().getY();
+			int yLocation = player.getLocation().getBlockY();
 
 			int highestY = player.getWorld().getHighestBlockYAt(xLocation, zLocation);
 
