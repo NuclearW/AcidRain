@@ -6,11 +6,11 @@ public class AcidRain extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-		getLogger().info("Finished Loading " + getDescription().getFullName());
+		getLogger().info("Finished loading " + getDescription().getFullName());
 	}
 
 	@Override
 	public void onDisable() {
-		getLogger().info("Finished Unloading "+getDescription().getFullName());
+		getLogger().info("Finished unloading " + getDescription().getFullName());
 	}
 }
