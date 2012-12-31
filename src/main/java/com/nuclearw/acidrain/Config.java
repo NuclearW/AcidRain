@@ -6,7 +6,7 @@ public class Config {
 	public static int checkInterval;
 	public static int damagePerInterval;
 	public static int damageCutoffLevel;
-	
+
 	public static boolean verbose;
 
 	public static void load(AcidRain plugin) {
