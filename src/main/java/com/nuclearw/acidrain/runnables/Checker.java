@@ -50,7 +50,7 @@ public class Checker implements Runnable {
 
 			plugin.verbose("Player: " + player.getName() + " Y: " + yLocation + " HighestY: " + highestY);
 
-			player.damage(Config.damagePerInterval);
+			player.damage(Config.damagePerInterval, player);
 		}
 	}
 }
