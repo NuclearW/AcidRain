@@ -1,0 +1,5 @@
+name: AcidRain
+main: com.nuclearw.acidrain.AcidRain
+version: ${project.version}
+authors: [NuclearW, jkcclemens, Tunix2, SonarBeserk]
+description: AcidRain makes rain dangerous.

@@ -1,0 +1,7 @@
+== AcidRain
+
+AcidRain makes rain dangerous.
+
+=== Compiling
+
+Maven 3 is required to compile AcidRain
