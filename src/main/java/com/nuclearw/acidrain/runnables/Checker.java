@@ -56,8 +56,6 @@ public class Checker implements Runnable {
 			if (player.getHealth() <= Config.damageCutoffLevel) continue;
 
 			if (Config.poisonRain) {
-				if (Config.poisonChance < 0 || Config.poisonChance > 100)
-					Config.poisonChance = 5; // invalid not allowed
 				if (r.nextInt(100) < Config.poisonChance)
 					player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, Config.poisonDuration, 1));
 			}
