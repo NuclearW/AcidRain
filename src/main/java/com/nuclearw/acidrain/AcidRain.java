@@ -20,4 +20,12 @@ public class AcidRain extends JavaPlugin {
 	public void onDisable() {
 		getLogger().info("Finished unloading " + getDescription().getFullName());
 	}
+	
+	public void verbose(String s)
+	{
+		if(Config.verbose)
+		{
+			getLogger().info(s);
+		}
+	}
 }

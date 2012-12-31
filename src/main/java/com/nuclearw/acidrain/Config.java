@@ -6,6 +6,8 @@ public class Config {
 	public static int checkInterval;
 	public static int damagePerInterval;
 	public static int damageCutoffLevel;
+	
+	public static boolean verbose;
 
 	public static void load(AcidRain plugin) {
 		if(!new File(plugin.getDataFolder() , "config.yml").exists()) {
@@ -15,5 +17,7 @@ public class Config {
 		checkInterval = plugin.getConfig().getInt("check-interval");
 		damagePerInterval = plugin.getConfig().getInt("damage-per");
 		damageCutoffLevel = plugin.getConfig().getInt("damage-cutoff");
+		
+		verbose = plugin.getConfig().getBoolean("verbose");
 	}
 }
