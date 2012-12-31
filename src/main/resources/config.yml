@@ -13,10 +13,13 @@ damage-cutoff: 0
 leather-raincoat: true
 
 # Rain can be poisonous
-poisonrain: false
+poison-rain: false
 
-# Chance to poison a player
-poisonchance: 10
+# Chance to poison a player (0 - 100)
+poison-chance: 10
+
+# Duration of poison effect in seconds
+poison-duration: 5
 
 # Output Verbose messages?
 verbose: false

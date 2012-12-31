@@ -6,10 +6,11 @@ public class Config {
 	public static int checkInterval;
 	public static int damagePerInterval;
 	public static int damageCutoffLevel;
-	public static int poisonchance;
+	public static int poisonChance;
+	public static int poisonDuration;
 	
 	public static boolean leatherRaincoat;
-	public static boolean poisonrain;
+	public static boolean poisonRain;
 	
 	public static boolean verbose;
 
@@ -21,10 +22,11 @@ public class Config {
 		checkInterval = plugin.getConfig().getInt("check-interval");
 		damagePerInterval = plugin.getConfig().getInt("damage-per");
 		damageCutoffLevel = plugin.getConfig().getInt("damage-cutoff");
-		poisonchance = plugin.getConfig().getInt("poisonchance");
+		poisonChance = plugin.getConfig().getInt("poison-chance");
+		poisonDuration = plugin.getConfig().getInt("poison-duration");
 		
 		leatherRaincoat = plugin.getConfig().getBoolean("leather-raincoat");
-		poisonrain = plugin.getConfig().getBoolean("poisonrain");
+		poisonRain = plugin.getConfig().getBoolean("poison-rain");
 		
 		verbose = plugin.getConfig().getBoolean("verbose");
 	}
