@@ -7,3 +7,11 @@ permissions:
   acidrain.immune:
     description: Protects players from acid rain damage.
     default: false
+  acidrain.reload:
+    description: Allows Reloading of the Config
+    default: op 
+commands:
+  acidrain:
+    description: Base Command for acidrain
+    aliases: [ar]
+    usage: "Usage: /<command> (subcommand) [args]"     

@@ -1,5 +1,6 @@
 package com.nuclearw.acidrain;
 
+import com.nuclearw.acidrain.commands.BaseCommandExecutor;
 import com.nuclearw.acidrain.listeners.WeatherListener;
 import com.nuclearw.acidrain.runnables.Checker;
 
@@ -19,6 +20,8 @@ public class AcidRain extends JavaPlugin {
 		PluginManager manager = getServer().getPluginManager();
 		
 		manager.registerEvents(new WeatherListener(this), this);
+		
+		getCommand("acidrain").setExecutor(new BaseCommandExecutor(this));
 		
 		getLogger().info("Finished loading " + getDescription().getFullName());
 	}
