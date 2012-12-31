@@ -3,21 +3,31 @@ package com.nuclearw.acidrain;
 import java.io.File;
 
 public class Config {
+	
+	// Static Strings
+	public static String rainwarningmsg;
+	
+	// Static Ints
 	public static int checkInterval;
 	public static int damagePerInterval;
 	public static int damageCutoffLevel;
 	public static int poisonChance;
 	public static int poisonDuration;
 
+	// Static Booleans
+	public static boolean rainwarning;
 	public static boolean leatherRaincoat;
 	public static boolean poisonRain;
 
+	// Static Debug Booleans
 	public static boolean verbose;
 
 	public static void load(AcidRain plugin) {
 		if (!new File(plugin.getDataFolder(), "config.yml").exists()) {
 			plugin.saveDefaultConfig();
 		}
+		
+		rainwarningmsg = plugin.getConfig().getString("rainwarningmsg");
 
 		checkInterval = plugin.getConfig().getInt("check-interval");
 		damagePerInterval = plugin.getConfig().getInt("damage-per");
@@ -25,6 +35,7 @@ public class Config {
 		poisonChance = plugin.getConfig().getInt("poison-chance");
 		poisonDuration = plugin.getConfig().getInt("poison-duration");
 
+		rainwarning = plugin.getConfig().getBoolean("rainwarning");
 		leatherRaincoat = plugin.getConfig().getBoolean("leather-raincoat");
 		poisonRain = plugin.getConfig().getBoolean("poison-rain");
 
