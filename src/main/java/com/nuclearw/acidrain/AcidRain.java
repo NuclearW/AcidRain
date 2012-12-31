@@ -11,7 +11,7 @@ public class AcidRain extends JavaPlugin {
 		Config.load(this);
 
         BukkitScheduler bs = getServer().getScheduler();
-        bs.scheduleSyncRepeatingTask(this, new Checker(), 0L, Config.checkInterval * 20L);
+        bs.scheduleSyncRepeatingTask(this, new Checker(this), 0L, Config.checkInterval * 20L);
 
 		getLogger().info("Finished loading " + getDescription().getFullName());
 	}
