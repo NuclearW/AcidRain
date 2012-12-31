@@ -39,12 +39,14 @@ public class Checker implements Runnable {
 					continue;
 			}
 
-			int yLocation = player.getLocation().getBlockY();
+			double yLocation = player.getLocation().getY();
 
 			int highestY = player.getWorld().getHighestBlockYAt(xLocation, zLocation);
 
 			if (yLocation <= highestY) continue;
 			if (player.getHealth() <= Config.damageCutoffLevel) continue;
+
+			plugin.verbose("Player: " + player.getName() + " Y: " + yLocation + " HighestY: " + highestY);
 
 			player.damage(Config.damagePerInterval);
 		}
