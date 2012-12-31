@@ -21,7 +21,7 @@ public class Checker implements Runnable {
 			if(player.hasPermission("acidrain.immune")) continue;
 
 			int xLocation = player.getLocation().getBlockX();
-			int zLocation = player.getLocation().getBlockX();
+			int zLocation = player.getLocation().getBlockZ();
 
 			Biome biomeLocation = player.getWorld().getBiome(xLocation, zLocation);
 
