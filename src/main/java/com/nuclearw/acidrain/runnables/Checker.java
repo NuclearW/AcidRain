@@ -53,10 +53,10 @@ public class Checker implements Runnable {
 
 			PlayerInventory inventory = player.getInventory();
 			if(Config.leatherRaincoat &&
-					inventory.getHelmet().getType() == Material.LEATHER_HELMET &&
-					inventory.getChestplate().getType() == Material.LEATHER_CHESTPLATE &&
-					inventory.getLeggings().getType() == Material.LEATHER_LEGGINGS &&
-					inventory.getBoots().getType() == Material.LEATHER_BOOTS) {
+					inventory.getHelmet() != null && inventory.getHelmet().getType() == Material.LEATHER_HELMET &&
+					inventory.getChestplate() != null && inventory.getChestplate().getType() == Material.LEATHER_CHESTPLATE &&
+					inventory.getLeggings() != null && inventory.getLeggings().getType() == Material.LEATHER_LEGGINGS &&
+					inventory.getBoots() != null && inventory.getBoots().getType() == Material.LEATHER_BOOTS) {
 				continue;
 			}
 
