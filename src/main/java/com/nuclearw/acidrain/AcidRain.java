@@ -10,8 +10,8 @@ public class AcidRain extends JavaPlugin {
 	public void onEnable() {
 		Config.load(this);
 
-        BukkitScheduler bs = getServer().getScheduler();
-        bs.scheduleSyncRepeatingTask(this, new Checker(this), 0L, Config.checkInterval * 20L);
+		BukkitScheduler bs = getServer().getScheduler();
+		bs.scheduleSyncRepeatingTask(this, new Checker(this), 0L, Config.checkInterval * 20L);
 
 		getLogger().info("Finished loading " + getDescription().getFullName());
 	}
@@ -20,11 +20,14 @@ public class AcidRain extends JavaPlugin {
 	public void onDisable() {
 		getLogger().info("Finished unloading " + getDescription().getFullName());
 	}
-	
-	public void verbose(String s)
-	{
-		if(Config.verbose)
-		{
+
+	/**
+	 * Logs a message to the console if verbose-mode is on in the config.
+	 *
+	 * @param s Message to log
+	 */
+	public void verbose(String s) {
+		if (Config.verbose) {
 			getLogger().info(s);
 		}
 	}
