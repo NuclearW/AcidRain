@@ -1,0 +1,4 @@
+# AcidRain config file
+check-interval: 10
+damage-per: 1
+damage-cutoff: 0
