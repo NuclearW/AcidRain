@@ -21,6 +21,7 @@ public class Config {
 		checkInterval = plugin.getConfig().getInt("check-interval");
 		damagePerInterval = plugin.getConfig().getInt("damage-per");
 		damageCutoffLevel = plugin.getConfig().getInt("damage-cutoff");
+		poisonchance = plugin.getConfig().getInt("poisonchance");
 		
 		leatherRaincoat = plugin.getConfig().getBoolean("leather-raincoat");
 		poisonrain = plugin.getConfig().getBoolean("poisonrain");
