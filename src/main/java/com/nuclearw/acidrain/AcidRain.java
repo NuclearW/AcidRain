@@ -6,6 +6,8 @@ public class AcidRain extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		Config.load(this);
+
 		getLogger().info("Finished loading " + getDescription().getFullName());
 	}
 
