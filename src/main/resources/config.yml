@@ -4,7 +4,7 @@
 rain-warning: true
 
 # Rain Warning Message
-rain-warning-msg: '&cThe rain reeks of a foul stench and has a slight sting to the touch&r'
+rain-warning-msg: '&cThe rain reeks of a foul stench and has a slight sting to the touch'
 
 # Time between in seconds
 check-interval: 10
