@@ -5,7 +5,7 @@ import java.io.File;
 public class Config {
 	
 	// Static Strings
-	public static String rainwarningmsg;
+	public static String rainWarningMsg;
 	
 	// Static Ints
 	public static int checkInterval;
@@ -15,7 +15,7 @@ public class Config {
 	public static int poisonDuration;
 
 	// Static Booleans
-	public static boolean rainwarning;
+	public static boolean rainWarning;
 	public static boolean leatherRaincoat;
 	public static boolean poisonRain;
 
@@ -27,7 +27,7 @@ public class Config {
 			plugin.saveDefaultConfig();
 		}
 		
-		rainwarningmsg = plugin.getConfig().getString("rainwarningmsg");
+		rainWarningMsg = plugin.getConfig().getString("rainWarningMsg");
 
 		checkInterval = plugin.getConfig().getInt("check-interval");
 		damagePerInterval = plugin.getConfig().getInt("damage-per");
@@ -35,7 +35,7 @@ public class Config {
 		poisonChance = plugin.getConfig().getInt("poison-chance");
 		poisonDuration = plugin.getConfig().getInt("poison-duration");
 
-		rainwarning = plugin.getConfig().getBoolean("rainwarning");
+		rainWarning = plugin.getConfig().getBoolean("rainWarning");
 		leatherRaincoat = plugin.getConfig().getBoolean("leather-raincoat");
 		poisonRain = plugin.getConfig().getBoolean("poison-rain");
 

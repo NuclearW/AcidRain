@@ -20,13 +20,15 @@ public class WeatherListener implements Listener {
 	@EventHandler(ignoreCancelled = true)
 	public void weatherevent(WeatherChangeEvent event) {
 		if(event.toWeatherState() == true) {
-			if(Config.rainwarning) {
+			if(Config.rainWarning) {
 				World world = event.getWorld();
 				
 				List<Player> players = world.getPlayers();
 				
 				for (Player player : players) {
-					String formatedmsg = Config.rainwarningmsg;
+					if(player.hasPermission("acidrain.immune")) {return;}
+					
+					String formatedmsg = Config.rainWarningMsg;
 					formatedmsg = ChatColor.translateAlternateColorCodes('&', formatedmsg);
 					
 					player.sendMessage(formatedmsg);
