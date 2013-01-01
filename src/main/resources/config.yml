@@ -1,10 +1,10 @@
 # AcidRain config file
 
 # Rain Warning
-rainWarning: true
+rain-warning: true
 
 # Rain Warning Message
-rainWarningMsg: '&cThe rain reeks of a foul stench and has a slight sting to the touch&r'
+rain-warning-msg: '&cThe rain reeks of a foul stench and has a slight sting to the touch&r'
 
 # Time between in seconds
 check-interval: 10

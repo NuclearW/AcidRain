@@ -27,7 +27,7 @@ public class Config {
 			plugin.saveDefaultConfig();
 		}
 		
-		rainWarningMsg = plugin.getConfig().getString("rainWarningMsg");
+		rainWarningMsg = plugin.getConfig().getString("rain-warning-msg");
 
 		checkInterval = plugin.getConfig().getInt("check-interval");
 		damagePerInterval = plugin.getConfig().getInt("damage-per");
@@ -35,7 +35,7 @@ public class Config {
 		poisonChance = plugin.getConfig().getInt("poison-chance");
 		poisonDuration = plugin.getConfig().getInt("poison-duration");
 
-		rainWarning = plugin.getConfig().getBoolean("rainWarning");
+		rainWarning = plugin.getConfig().getBoolean("rain-warning");
 		leatherRaincoat = plugin.getConfig().getBoolean("leather-raincoat");
 		poisonRain = plugin.getConfig().getBoolean("poison-rain");
 
