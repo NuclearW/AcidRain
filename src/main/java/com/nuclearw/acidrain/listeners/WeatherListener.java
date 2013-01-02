@@ -25,9 +25,10 @@ public class WeatherListener implements Listener {
 		if(event.toWeatherState() == true) {
 			if(Config.rainWarning) {
 				World world = event.getWorld();
-
 				if(rand.nextInt(100) < Config.acidRainChance) {
 					plugin.raining.add(world);
+				} else {
+					return;
 				}
 
 				List<Player> players = world.getPlayers();
