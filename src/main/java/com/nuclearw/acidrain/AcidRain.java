@@ -9,20 +9,19 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
 public class AcidRain extends JavaPlugin {
-
 	@Override
 	public void onEnable() {
 		Config.load(this);
 
 		BukkitScheduler bs = getServer().getScheduler();
 		bs.scheduleSyncRepeatingTask(this, new Checker(this), 0L, Config.checkInterval * 20L);
-		
+
 		PluginManager manager = getServer().getPluginManager();
-		
+
 		manager.registerEvents(new WeatherListener(this), this);
-		
+
 		getCommand("acidrain").setExecutor(new BaseCommandExecutor(this));
-		
+
 		getLogger().info("Finished loading " + getDescription().getFullName());
 	}
 
@@ -37,7 +36,7 @@ public class AcidRain extends JavaPlugin {
 	 * @param s Message to log
 	 */
 	public void verbose(String s) {
-		if (Config.verbose) {
+		if(Config.verbose) {
 			getLogger().info(s);
 		}
 	}

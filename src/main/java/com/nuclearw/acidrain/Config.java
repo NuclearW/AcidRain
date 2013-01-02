@@ -3,10 +3,9 @@ package com.nuclearw.acidrain;
 import java.io.File;
 
 public class Config {
-	
 	// Static Strings
 	public static String rainWarningMsg;
-	
+
 	// Static Ints
 	public static int checkInterval;
 	public static int damagePerInterval;
@@ -23,10 +22,10 @@ public class Config {
 	public static boolean verbose;
 
 	public static void load(AcidRain plugin) {
-		if (!new File(plugin.getDataFolder(), "config.yml").exists()) {
+		if(!new File(plugin.getDataFolder(), "config.yml").exists()) {
 			plugin.saveDefaultConfig();
 		}
-		
+
 		rainWarningMsg = plugin.getConfig().getString("rain-warning-msg");
 
 		checkInterval = plugin.getConfig().getInt("check-interval");
@@ -41,7 +40,7 @@ public class Config {
 
 		verbose = plugin.getConfig().getBoolean("verbose");
 
-		if (poisonChance < 0 || poisonChance > 100) {
+		if(poisonChance < 0 || poisonChance > 100) {
 			plugin.getLogger().warning("poison-chance in config.yml is not between 0 and 100; setting it back to 10.");
 			poisonChance = 10;
 		}

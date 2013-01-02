@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class Checker implements Runnable {
 	private AcidRain plugin;
-	private final Random r = new Random();
+	private final Random rand = new Random();
 
 	public Checker(AcidRain plugin) {
 		this.plugin = plugin;
@@ -23,9 +23,10 @@ public class Checker implements Runnable {
 	public void run() {
 		Player[] players = plugin.getServer().getOnlinePlayers();
 
-		for (Player player : players) {
-			if (!player.getWorld().hasStorm()) continue;
-			if (player.hasPermission("acidrain.immune")) continue;
+		for(Player player : players) {
+			if(!player.getWorld().hasStorm()) continue;
+			if(!plugin.raining.contains(player.getWorld())) continue;
+			if(player.hasPermission("acidrain.immune")) continue;
 
 			int xLocation = player.getLocation().getBlockX();
 			int zLocation = player.getLocation().getBlockZ();
@@ -34,7 +35,7 @@ public class Checker implements Runnable {
 
 			plugin.verbose("Player: " + player.getName() + " X: " + xLocation + " Z: " + zLocation + " Biome: " + biomeLocation.toString());
 
-			switch (biomeLocation) {
+			switch(biomeLocation) {
 				case DESERT:
 				case DESERT_HILLS:
 				case FROZEN_OCEAN:
@@ -52,16 +53,16 @@ public class Checker implements Runnable {
 
 			int highestY = player.getWorld().getHighestBlockYAt(xLocation, zLocation);
 
-			if (yLocation <= highestY) continue;
-			if (player.getHealth() <= Config.damageCutoffLevel) continue;
+			if(yLocation <= highestY) continue;
+			if(player.getHealth() <= Config.damageCutoffLevel) continue;
 
-			if (Config.poisonRain) {
-				if (r.nextInt(100) < Config.poisonChance)
+			if(Config.poisonRain) {
+				if(rand.nextInt(100) < Config.poisonChance)
 					player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, Config.poisonDuration, 1));
 			}
 
 			PlayerInventory inventory = player.getInventory();
-			if (Config.leatherRaincoat &&
+			if(Config.leatherRaincoat &&
 					inventory.getHelmet() != null && inventory.getHelmet().getType() == Material.LEATHER_HELMET &&
 					inventory.getChestplate() != null && inventory.getChestplate().getType() == Material.LEATHER_CHESTPLATE &&
 					inventory.getLeggings() != null && inventory.getLeggings().getType() == Material.LEATHER_LEGGINGS &&
