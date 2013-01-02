@@ -1,5 +1,8 @@
 # AcidRain config file
 
+# Chance storms will be acidic (0 - 100)
+acid-rain-chance: 50
+
 # Rain Warning
 rain-warning: true
 

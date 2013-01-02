@@ -8,6 +8,7 @@ public class Config {
 	public static String rainWarningMsg;
 	
 	// Static Ints
+	public static int acidRainChance;
 	public static int checkInterval;
 	public static int damagePerInterval;
 	public static int damageCutoffLevel;
@@ -26,6 +27,8 @@ public class Config {
 		if (!new File(plugin.getDataFolder(), "config.yml").exists()) {
 			plugin.saveDefaultConfig();
 		}
+		
+		acidRainChance = plugin.getConfig().getInt("acid-rain-chance");
 		
 		rainWarningMsg = plugin.getConfig().getString("rain-warning-msg");
 

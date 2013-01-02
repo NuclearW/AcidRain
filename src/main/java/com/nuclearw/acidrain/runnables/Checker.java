@@ -2,6 +2,8 @@ package com.nuclearw.acidrain.runnables;
 
 import com.nuclearw.acidrain.AcidRain;
 import com.nuclearw.acidrain.Config;
+import com.nuclearw.acidrain.listeners.WeatherListener;
+
 import org.bukkit.Material;
 import org.bukkit.block.Biome;
 import org.bukkit.entity.Player;
@@ -13,8 +15,9 @@ import java.util.Random;
 
 public class Checker implements Runnable {
 	private AcidRain plugin;
+	private WeatherListener w = new WeatherListener(plugin);
 	private final Random r = new Random();
-
+	
 	public Checker(AcidRain plugin) {
 		this.plugin = plugin;
 	}
@@ -22,9 +25,11 @@ public class Checker implements Runnable {
 	@Override
 	public void run() {
 		Player[] players = plugin.getServer().getOnlinePlayers();
-
+		
+		
 		for (Player player : players) {
 			if (!player.getWorld().hasStorm()) continue;
+			if (w.isRainAcidic() == false) continue;
 			if (player.hasPermission("acidrain.immune")) continue;
 
 			int xLocation = player.getLocation().getBlockX();
