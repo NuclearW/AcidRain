@@ -1,6 +1,8 @@
 package com.nuclearw.acidrain.listeners;
 
 import java.util.List;
+import java.util.Random;
+
 import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
@@ -12,6 +14,7 @@ import com.nuclearw.acidrain.Config;
 
 public class WeatherListener implements Listener {
 	private AcidRain plugin;
+	private final Random rand = new Random();
 
 	public WeatherListener(AcidRain plugin) {
 		this.plugin = plugin;
@@ -23,6 +26,10 @@ public class WeatherListener implements Listener {
 			if(Config.rainWarning) {
 				World world = event.getWorld();
 
+				if(rand.nextInt(100) < Config.acidRainChance) {
+					plugin.raining.add(world);
+				}
+
 				List<Player> players = world.getPlayers();
 
 				for(Player player : players) {
@@ -33,6 +40,10 @@ public class WeatherListener implements Listener {
 
 					player.sendMessage(formatedmsg);
 				}
+			}
+		} else {
+			if(plugin.raining.contains(event.getWorld())) {
+				plugin.raining.remove(event.getWorld());
 			}
 		}
 	}

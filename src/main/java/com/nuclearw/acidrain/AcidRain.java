@@ -1,14 +1,20 @@
 package com.nuclearw.acidrain;
 
+import java.util.HashSet;
+
 import com.nuclearw.acidrain.commands.BaseCommandExecutor;
 import com.nuclearw.acidrain.listeners.WeatherListener;
 import com.nuclearw.acidrain.runnables.Checker;
 
+import org.bukkit.World;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
 public class AcidRain extends JavaPlugin {
+	// Contains worlds currently acid raining
+	public HashSet<World> raining = new HashSet<World>();
+
 	@Override
 	public void onEnable() {
 		Config.load(this);

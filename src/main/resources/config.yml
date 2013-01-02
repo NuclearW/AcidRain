@@ -6,6 +6,9 @@ rain-warning: true
 # Rain Warning Message
 rain-warning-msg: '&cThe rain reeks of a foul stench and has a slight sting to the touch'
 
+# Chance storms will be acidic (0 - 100)
+acid-rain-chance: 50
+
 # Time between in seconds
 check-interval: 10
 

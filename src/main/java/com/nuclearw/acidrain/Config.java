@@ -7,6 +7,7 @@ public class Config {
 	public static String rainWarningMsg;
 
 	// Static Ints
+	public static int acidRainChance;
 	public static int checkInterval;
 	public static int damagePerInterval;
 	public static int damageCutoffLevel;
@@ -28,6 +29,7 @@ public class Config {
 
 		rainWarningMsg = plugin.getConfig().getString("rain-warning-msg");
 
+		acidRainChance = plugin.getConfig().getInt("acid-rain-chance");
 		checkInterval = plugin.getConfig().getInt("check-interval");
 		damagePerInterval = plugin.getConfig().getInt("damage-per");
 		damageCutoffLevel = plugin.getConfig().getInt("damage-cutoff");
@@ -43,6 +45,11 @@ public class Config {
 		if(poisonChance < 0 || poisonChance > 100) {
 			plugin.getLogger().warning("poison-chance in config.yml is not between 0 and 100; setting it back to 10.");
 			poisonChance = 10;
+		}
+
+		if(acidRainChance < 0 || acidRainChance > 100) {
+			plugin.getLogger().warning("acid-rain-chance in config.yml is not between 0 and 100; setting it back to 50.");
+			acidRainChance = 50;
 		}
 	}
 }
