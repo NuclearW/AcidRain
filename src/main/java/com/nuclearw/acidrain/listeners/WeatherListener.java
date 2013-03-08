@@ -13,6 +13,7 @@ import com.nuclearw.acidrain.AcidRain;
 import com.nuclearw.acidrain.Config;
 
 public class WeatherListener implements Listener {
+	
 	private AcidRain plugin;
 	private final Random rand = new Random();
 
