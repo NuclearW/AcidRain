@@ -22,6 +22,7 @@ public class WeatherListener implements Listener {
 
 	@EventHandler(ignoreCancelled = true)
 	public void weatherevent(WeatherChangeEvent event) {
+		if(!Config.enabledWorlds.contains(event.getWorld().getName())) {return;}
 		if(event.toWeatherState() == true) {
 			if(Config.rainWarning) {
 				World world = event.getWorld();

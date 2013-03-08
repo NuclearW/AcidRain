@@ -1,6 +1,7 @@
 package com.nuclearw.acidrain;
 
 import java.io.File;
+import java.util.List;
 
 public class Config {
 	// Static Strings
@@ -22,6 +23,9 @@ public class Config {
 	// Static Debug Booleans
 	public static boolean verbose;
 
+	// Static Lists
+	public static List<String> enabledWorlds;
+	
 	public static void load(AcidRain plugin) {
 		if(!new File(plugin.getDataFolder(), "config.yml").exists()) {
 			plugin.saveDefaultConfig();
@@ -42,6 +46,8 @@ public class Config {
 
 		verbose = plugin.getConfig().getBoolean("verbose");
 
+		enabledWorlds = plugin.getConfig().getStringList("enabled-worlds");
+		
 		if(poisonChance < 0 || poisonChance > 100) {
 			plugin.getLogger().warning("poison-chance in config.yml is not between 0 and 100; setting it back to 10.");
 			poisonChance = 10;

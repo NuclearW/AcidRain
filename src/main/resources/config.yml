@@ -1,5 +1,9 @@
 # AcidRain config file
 
+# Worlds to enable AcidRain on
+enabled-worlds:
+- world
+
 # Rain Warning
 rain-warning: true
 
